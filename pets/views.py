@@ -80,7 +80,6 @@ class PetDetailView(APIView, PageNumberPagination):
         if pet_trait:
             pet.traits.clear()
             for trait_dict in pet_trait:
-                print(trait_dict)
                 traits_obj = Trait.objects.filter(
                     name__iexact=trait_dict["name"]
                 ).first()
